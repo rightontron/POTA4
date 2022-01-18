@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://wh1te909.github.io/tacticalrmm/faq/">
       
       <link rel="icon" href="../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
     
     
       
@@ -878,8 +878,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-anything-to-the-internet" class="md-nav__link">
-    Can I run Tactical RMM locally behind NAT without exposing anything to the internet?
+  <a href="#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-my-rmm-server-to-the-internet" class="md-nav__link">
+    Can I run Tactical RMM locally behind NAT without exposing my RMM server to the internet?
   </a>
   
 </li>
@@ -915,13 +915,6 @@
         <li class="md-nav__item">
   <a href="#dns-cant-find-record" class="md-nav__link">
     DNS can't find record
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#onsite-dns-server-and-lan-only-trmm-servers" class="md-nav__link">
-    Onsite DNS server and LAN only TRMM servers
   </a>
   
 </li>
@@ -1411,8 +1404,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-anything-to-the-internet" class="md-nav__link">
-    Can I run Tactical RMM locally behind NAT without exposing anything to the internet?
+  <a href="#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-my-rmm-server-to-the-internet" class="md-nav__link">
+    Can I run Tactical RMM locally behind NAT without exposing my RMM server to the internet?
   </a>
   
 </li>
@@ -1453,13 +1446,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#onsite-dns-server-and-lan-only-trmm-servers" class="md-nav__link">
-    Onsite DNS server and LAN only TRMM servers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#self-signed-certs" class="md-nav__link">
     Self-Signed Certs
   </a>
@@ -1490,7 +1476,7 @@
 <h2 id="who-is-amidaware-llc">Who is Amidaware LLC?<a class="headerlink" href="#who-is-amidaware-llc" title="Permanent link">&para;</a></h2>
 <p>The Legal entity behind Tactical RMM</p>
 <h2 id="is-it-possible-to-use-xxx-with-tactical-rmm">Is it possible to use XXX with Tactical RMM<a class="headerlink" href="#is-it-possible-to-use-xxx-with-tactical-rmm" title="Permanent link">&para;</a></h2>
-<p>While it <em>may be possible</em> to use XXX, we have not configured it and therefore it is <a href="../unsupported_guidelines">Unsupported</a>. We cannot help you configure XXX as it pertains to <strong>your environment</strong>. </p>
+<p>While it <em>may be possible</em> to use XXX, we have not configured it and therefore it is <a href="../unsupported_guidelines">Unsupported</a>. We cannot help you configure XXX as it pertains to <strong>your environment</strong>.</p>
 <h2 id="is-it-possible-to-use-xxx-proxy-server-with-tactical-rmm">Is it possible to use XXX proxy server with Tactical RMM<a class="headerlink" href="#is-it-possible-to-use-xxx-proxy-server-with-tactical-rmm" title="Permanent link">&para;</a></h2>
 <p>If you wish to stray from the <a href="../install_server/#option-1-easy-install">easy install</a> of a standard install in a VPS, you need to have the knowledge on how to troubleshoot your own custom environment.</p>
 <p>The most common reasons you're running a proxy is:</p>
@@ -1500,11 +1486,14 @@
 </ol>
 <p>There are some <a href="../unsupported_scripts">implementations</a> that others have done, but be aware it is <a href="../unsupported_guidelines">Unsupported</a> and if you're requesting help in Discord please let us know in advance.</p>
 <h2 id="how-do-i-do-x-feature-in-the-web-ui">How do I do X feature in the web UI?<a class="headerlink" href="#how-do-i-do-x-feature-in-the-web-ui" title="Permanent link">&para;</a></h2>
-<p>Alot of features in the web UI are hidden behind right-click menus; almost everything has a right click menu so if you don't see something, try right clicking on it.</p>
+<p>A lot of features in the web UI are hidden behind right-click menus; almost everything has a right click menu so if you don't see something, try right clicking on it.</p>
 <h2 id="where-are-the-linux-mac-agents">Where are the Linux / Mac agents?<a class="headerlink" href="#where-are-the-linux-mac-agents" title="Permanent link">&para;</a></h2>
 <p>Linux / Mac agents are currently under development.</p>
-<h2 id="can-i-run-tactical-rmm-locally-behind-nat-without-exposing-anything-to-the-internet">Can I run Tactical RMM locally behind NAT without exposing anything to the internet?<a class="headerlink" href="#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-anything-to-the-internet" title="Permanent link">&para;</a></h2>
+<h2 id="can-i-run-tactical-rmm-locally-behind-nat-without-exposing-my-rmm-server-to-the-internet">Can I run Tactical RMM locally behind NAT <strong>without</strong> exposing my RMM server to the internet?<a class="headerlink" href="#can-i-run-tactical-rmm-locally-behind-nat-without-exposing-my-rmm-server-to-the-internet" title="Permanent link">&para;</a></h2>
 <p>Yes, you will just need to setup local DNS for the 3 subdomains, either by editing host files on all your agents or through a local DNS server.</p>
+<p>Similarly asked: Can I use onsite DNS servers (I don’t want my server accessible from the internet).</p>
+<p>Yes, you can use (only) internal DNS (if you want) for api, mesh and rmm domains. You don't have to put these records in your public DNS servers</p>
+<p><strong>Note:</strong> You still <strong>must</strong> have an internet resolvable domain name and add the DNS <code>TXT</code> record to its public DNS server for the Let's Encrypt wildcard cert request process that is part of the install process. This <strong>does not</strong> require any inbound connection from the internet (port forwarding etc) to be enabled. This does not expose your RMM server to the internet in any way. The Let's Encrypt wildcard is done for <a href="#self-signed-certs">nats</a></p>
 <h2 id="i-am-locked-out-of-the-web-ui-how-do-i-reset-my-password">I am locked out of the web UI. How do I reset my password?<a class="headerlink" href="#i-am-locked-out-of-the-web-ui-how-do-i-reset-my-password" title="Permanent link">&para;</a></h2>
 <p>SSH into your server and run:</p>
 <div class="highlight"><pre><span></span><code>/rmm/api/env/bin/python /rmm/api/tacticalrmm/manage.py reset_password &lt;username&gt;
@@ -1564,14 +1553,13 @@ sudo systemctl start meshcentral
 <p><img alt="AV Sandbox1" src="../images/faq_av_sandbox3.png" /></p>
 <p><img alt="AV Sandbox1" src="../images/faq_av_sandbox4.png" /></p>
 <h2 id="dns-cant-find-record">DNS can't find record<a class="headerlink" href="#dns-cant-find-record" title="Permanent link">&para;</a></h2>
-<p>Q. My dns isn’t working </p>
-<p>A. Make sure it’s correctly formatted some dns hosts add in the domain automatically. </p>
-<h2 id="onsite-dns-server-and-lan-only-trmm-servers">Onsite DNS server and LAN only TRMM servers<a class="headerlink" href="#onsite-dns-server-and-lan-only-trmm-servers" title="Permanent link">&para;</a></h2>
-<p>Q. Can I use onsite dns servers (I don’t want my server internet accessible). </p>
-<p>A. Yes that’s covered in the docs, you can use internal dns for api, mesh and rmm domains but need to add the dns txt to an internet resolvable dns server for letsencrypt wildcard cert</p>
+<p>Q. My dns isn’t working</p>
+<p>A. Make sure it’s correctly formatted, most DNS providers add in the domain automatically.</p>
+<p><img alt="DNS Examples" src="../images/trmmdnsexample.png" /></p>
 <h2 id="self-signed-certs">Self-Signed Certs<a class="headerlink" href="#self-signed-certs" title="Permanent link">&para;</a></h2>
-<p>Q. Why can’t I use a self signed certificate for web etc. </p>
-<p>A. NATS over TLS needs a real certificate signed with a trusted root certificate. NATS can function without TLS however that isn’t recommended</p>
+<p>Q. Why can’t I use a self signed certificate for web etc.</p>
+<p>A. NATS over TLS needs a real certificate signed with a trusted root certificate.</p>
+<p>If you aren't a dev in a non-production environment, don't run nats with self signed certs: <a href="https://docs.nats.io/running-a-nats-service/configuration/securing_nats/tls#self-signed-certificates-for-testing">https://docs.nats.io/running-a-nats-service/configuration/securing_nats/tls#self-signed-certificates-for-testing</a></p>
 
               
             </article>
@@ -1653,7 +1641,7 @@ sudo systemctl start meshcentral
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      <script src="../assets/javascripts/bundle.01de222e.min.js"></script>
       
     
   </body>

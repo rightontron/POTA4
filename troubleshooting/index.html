@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://wh1te909.github.io/tacticalrmm/troubleshooting/">
       
       <link rel="icon" href="../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
     
     
       
@@ -1528,7 +1528,7 @@ ping mesh.example.com
 <p>Logging of installs isn’t desirable as it logs extremely sensitive information which is why this isn’t done by default! <strong>Do not</strong> post the raw log publicly only provide it if requested and then by dm only. Authorized users in Discord are: @BurningTimes#1938 @sadnub#6992 @dinger1986#1734 @silversword#9652</p>
 </div>
 <h2 id="bad-credentials-error-when-trying-to-login-to-the-web-ui">"Bad credentials" error when trying to login to the Web UI<a class="headerlink" href="#bad-credentials-error-when-trying-to-login-to-the-web-ui" title="Permanent link">&para;</a></h2>
-<p>If you are sure you are using the correct credentials and still getting a "bad credentials" error, open your browser's dev tools (ctrl + shift + j on chrome) and check the Console tab to see the real error.</p>
+<p>If you are sure you are using the correct credentials and still getting a "bad credentials" error, open your browser's dev tools (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-j">J</kbd></span> on chrome) and check the Console tab to see the real error.</p>
 <p>It will most probably be a CORS error which means you need to check your DNS settings and make sure whatever computer you're trying to access the UI from resolves your 3 subdomains to the correct IP of the server running the RMM (public IP if running in the cloud, or private IP if running behind NAT).</p>
 <p>If you see an error about SSL or certificate expired, then your Let's Encrypt cert has probably expired and you'll need to renew it.</p>
 <p>Refer to the Let's Encrypt cert renewal instructions <a href="../update_server/#keeping-your-lets-encrypt-certificate-up-to-date">here</a></p>
@@ -1580,7 +1580,7 @@ net stop tacticalrpc
 <div class="highlight"><pre><span></span><code>./update.sh --force
 </code></pre></div>
 <p>Check the debug log from the web UI: <strong>File &gt; Debug Log</strong></p>
-<p>Open your browser's dev tools (ctrl + shift + j on chrome) and check the Console tab for any errors</p>
+<p>Open your browser's dev tools (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-j">J</kbd></span> on chrome) and check the Console tab for any errors</p>
 <p>Check all the systemd services that the rmm uses to function and check to make sure they're all active/running and enabled:</p>
 <div class="highlight"><pre><span></span><code>sudo systemctl status rmm
 sudo systemctl status daphne
@@ -1716,7 +1716,7 @@ sudo systemctl status redis
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      <script src="../assets/javascripts/bundle.01de222e.min.js"></script>
       
     
   </body>
