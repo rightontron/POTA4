@@ -697,11 +697,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#agent-recovery" class="md-nav__link">
-    Agent Recovery
+  <a href="#agent-debugging" class="md-nav__link">
+    Agent Debugging
   </a>
   
-    <nav class="md-nav" aria-label="Agent Recovery">
+    <nav class="md-nav" aria-label="Agent Debugging">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1656,11 +1656,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#agent-recovery" class="md-nav__link">
-    Agent Recovery
+  <a href="#agent-debugging" class="md-nav__link">
+    Agent Debugging
   </a>
   
-    <nav class="md-nav" aria-label="Agent Recovery">
+    <nav class="md-nav" aria-label="Agent Debugging">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2215,7 +2215,57 @@ zipp==3.4.1
 <p>Executes the file (INNO setup exe)</p>
 <p>Files create <code>c:\Windows\temp\Tacticalxxxx\</code> folder for install (and log files)</p>
 <hr />
-<h3 id="agent-recovery">Agent Recovery<a class="headerlink" href="#agent-recovery" title="Permanent link">&para;</a></h3>
+<h3 id="agent-debugging">Agent Debugging<a class="headerlink" href="#agent-debugging" title="Permanent link">&para;</a></h3>
+<p>You can temporarily log to screen, or log to file</p>
+<details class="note" open="open">
+<summary>Debugging Options</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 7c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h-2v4h-2V9h4V7h-4M2 7v10h6v-2H4V7H2m9 0c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2h-2m0 2h2v6h-2V9z"/></svg></span> Manual One Time</label><label for="__tabbed_10_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 7c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h-2v4h-2V9h4V7h-4M2 7v10h6v-2H4V7H2m9 0c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2h-2m0 2h2v6h-2V9z"/></svg></span> Log debug to file</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Stop the services</p>
+<div class="highlight"><pre><span></span><code>net stop tacticalagent
+net stop tacticalrpc
+</code></pre></div>
+<p>Then run either Agent:</p>
+<p>Run the tacticalagent service manually with debug logging:</p>
+<div class="highlight"><pre><span></span><code>&quot;C:\Program Files\TacticalAgent\tacticalrmm.exe&quot; -m winagentsvc -log debug -logto stdout
+</code></pre></div>
+<p>Run the tacticalrpc service manually with debug logging:</p>
+<div class="highlight"><pre><span></span><code>&quot;C:\Program Files\TacticalAgent\tacticalrmm.exe&quot; -m rpc -log debug -logto stdout
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>TacticalAgent</p>
+<p>Stop the service</p>
+<div class="highlight"><pre><span></span><code>net stop tacticalagent
+</code></pre></div>
+<p>Edit the service: <code>TacticalAgent</code></p>
+<div class="highlight"><pre><span></span><code>cd &quot;c:\Program Files\TacticalAgent&quot;
+nssm.exe edit tacticalagent
+</code></pre></div>
+<p>Add options <code>-m winagentsvc -log debug</code></p>
+<p>TacticalAgent: Start the service
+<div class="highlight"><pre><span></span><code>net start tacticalagent
+</code></pre></div></p>
+<p>It will debug log to <code>"C:\Program Files\TacticalAgent\agent.log"</code></p>
+<p><strong>AND/OR</strong></p>
+<p>Tacticalrpc</p>
+<p>Stop the service</p>
+<div class="highlight"><pre><span></span><code>net stop tacticalrpc
+</code></pre></div>
+<p>Edit the service: <code>Tacticalrpc</code></p>
+<div class="highlight"><pre><span></span><code>cd &quot;c:\Program Files\Tacticalrpc&quot;
+nssm.exe edit tacticalrpc
+</code></pre></div>
+<p>Add options <code>-m rpc -log debug</code></p>
+<p>Tacticalrpc: Start the service
+<div class="highlight"><pre><span></span><code>net start tacticalrpc
+</code></pre></div></p>
+<p>It will debug log to <code>"C:\Program Files\TacticalAgent\agent.log"</code></p>
+</div>
+</div>
+</div>
+</details>
 <h4 id="mesh-agent-recovery">Mesh Agent Recovery<a class="headerlink" href="#mesh-agent-recovery" title="Permanent link">&para;</a></h4>
 <p>Tactical Agent just runs <code>mesh_agent.exe -something</code> to get the mesh agent id and saves it to the django database.</p>
 <h4 id="tactical-rpc-recovery">Tactical RPC Recovery<a class="headerlink" href="#tactical-rpc-recovery" title="Permanent link">&para;</a></h4>
